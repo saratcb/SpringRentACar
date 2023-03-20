@@ -3,6 +3,8 @@ package academy.mindswap.rentacar.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Builder
@@ -24,5 +26,7 @@ public class Car {
     private int dayPrice;
     @Column(nullable = false, unique = true)
     private String licencePlate;
+    @OneToMany
+    private List<Rentals> rentalLisl;
 
 }

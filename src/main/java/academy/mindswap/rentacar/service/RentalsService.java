@@ -14,7 +14,7 @@ public interface RentalsService {
 
     List<RentalsDto> getAllRentals();
 
-    RentalsDto updateRental(RentalsDto rentalDto);
+    RentalsDto updateRental(Long id, RentalsDto rentalDto);
 
     void deleteRental(Long rentalId);
 

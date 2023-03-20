@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rental")
+@RequestMapping("/rentals")
 public class RentalController {
 
     private RentalsService rentalsService;
@@ -54,7 +54,7 @@ public class RentalController {
     @PutMapping("/{id}")
     public ResponseEntity<RentalsDto> updateRental(@PathVariable Long id,  @RequestBody RentalsDto rentalDto) {
         rentalDto.setId(id);
-        RentalsDto rentalDto1 =  rentalsService.updateRental(rentalDto);
+        RentalsDto rentalDto1 =  rentalsService.updateRental(id, rentalDto);
         return new ResponseEntity<>(rentalDto1, HttpStatus.OK);
     }
 

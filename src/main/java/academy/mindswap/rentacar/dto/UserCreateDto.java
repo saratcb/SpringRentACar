@@ -1,8 +1,10 @@
 package academy.mindswap.rentacar.dto;
 
-import jakarta.validation.constraints.Min;
+import academy.mindswap.rentacar.model.UserRole;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Getter
@@ -22,15 +24,15 @@ public class UserCreateDto {
         private String email;
 
         @NotBlank(message = "Must have password")
-        @Min(value = 8, message = "password must be at least 8 char long")
+        @Size(min = 8, message = "password must be at least 8 char long")
         private String password;
 
         @NotBlank(message = "Must have password")
-        @Min(value = 8, message = "password must be at least 8 char long")
+        @Size(min = 8, message = "password must be at least 8 char long")
         private String retypedPassword;
 
-        @NotBlank(message = "Must have role")
-        private String role;
+        @NotNull(message = "Must have role")
+        private UserRole role;
 
 
     }

@@ -1,7 +1,8 @@
 package academy.mindswap.rentacar.dto;
 
-import jakarta.persistence.*;
+import academy.mindswap.rentacar.model.UserRole;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
@@ -21,7 +22,7 @@ public class UserDto {
     @Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$", message = "Invalid email")
     private String email;
 
-    @NotBlank(message = "Must have role")
-    private String role;
+    @NotNull(message = "Must have role")
+    private UserRole role;
 
 }
